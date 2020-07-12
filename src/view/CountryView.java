@@ -244,12 +244,12 @@ public class CountryView extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 private void loadDataCountry(List<Country> countrys) {
-        String header[] = {"id", "name"};
-        String[][] dataC = new String[countrys.size()][2];
+        String header[] = {"id", "name", "region"};
+        String[][] dataC = new String[countrys.size()][3];
         for (int i = 0; i < dataC.length; i++) {
-            dataC[i][0] = countrys.get(i).getId() + "";
-            dataC[i][1] = countrys.get(i).getName() + "";
-//            dataC[i][2] = countrys.get(i).getRegion(Integer.toString(regio));
+            dataC[i][0] = countrys.get(i).getId();
+            dataC[i][1] = countrys.get(i).getName();
+//            dataC[i][2] = countrys.get(i, Integer.toString(3));
         }
         DefaultTableModel defaultTableModel = new DefaultTableModel(dataC, header);
         tblCountry.setModel(defaultTableModel);
