@@ -24,9 +24,10 @@ public class CountryController {
        return this.cdao.getCountrys();
    }
 //    untuk menyimpan data
-   public String save(String id, String name, int region){
+   public String save(String id, String name, String region){
        String result = "Simpan data gagal";
-       Country country = new Country(id, name, region);
+       int regionx = Integer.parseInt(region);
+       Country country = new Country(id, name, regionx);
        if(this.cdao.insert(country)) result = "Simpan data berhasil";
        return result;
    }
